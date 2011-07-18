@@ -1,0 +1,66 @@
+{% load static %}
+{% get_static_prefix as STATIC_PREFIX %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>lolmaps</title>
+    <link rel="stylesheet" href="{{ STATIC_PREFIX }}leaflet/dist/leaflet.css" />
+    <script src="{{ STATIC_PREFIX }}leaflet/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+    <script>
+        var hawtsp0ts = {};
+        {% for point in points %}
+        hawtsp0ts[{{ point.id }}] ={
+            name: "{{ point.name }}",
+            lat: {{ point.geography.y }},
+            lng: {{ point.geography.x }},
+            map_marker: null
+        };
+        {% endfor %}
+    </script>
+
+</head>
+<body>
+    <div id="map" style="height: 800px"></div> <!-- width equals available horizontal space by default -->
+
+    {# <script src="{% static "leaflet/dist/leaflet.js" %}"></script>  lol django1.4 #}
+
+    <script>
+        var map = new L.Map('map');
+        var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/{{ cloudmade_api }}/999/256/{z}/{x}/{y}.png',
+            cloudmadeAttrib = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
+            cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 18, attribution: cloudmadeAttrib});
+
+        var new_york = new L.LatLng(40.75231, -73.9894); // geographical point (longitude and latitude)
+        map.setView(new_york, 13).addLayer(cloudmade);
+
+        $(document).ready(function() {
+            var i = 0;
+            function draw_points() {
+                for (id in hawtsp0ts) {
+                    var point = hawtsp0ts[id];
+                    var point_location = new L.LatLng(point.lat, point.lng);
+                    var marker = new L.Marker(point_location);
+                    map.addLayer(marker);
+                    marker.bindPopup('<b>' + point.name + '</b>');
+                }
+
+            }
+            draw_points();
+        });
+    </script>
+    <br/>
+    <div id=points>
+        {% for point in points %}
+            <div id={{ point.id }} class='point'>
+                {{ point.name }} ({{ point.geography.y }}, {{ point.geography.x }})
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
+
+

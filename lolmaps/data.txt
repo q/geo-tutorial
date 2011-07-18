@@ -1,0 +1,35 @@
+Brooklyn Super Hero Supply:40.67145, -73.9848
+Montsay Comics:40.7208, -73.8463
+Barcade:40.71204, -73.95129
+American Museum of Natural History:40.78061, -73.97361
+Fette Sau:40.71407, -73.95659
+Lofty:40.75231, -73.98940
+Apollo Theater:40.8097, -73.9500
+Bronx Zoo:40.8495, -73.8756
+LaGuardia Airport:40.7761, -73.8717
+JFK:40.6397, -73.7837
+Fort Tilden:40.5591, -73.8906
+Grand Army Plaza:40.6741, -73.9700
+The Daily Show Studio:40.76699, -73.99382
+Dinosaur BBQ:40.8184, -73.9607
+American Stock Exchange:40.70901, -74.01210
+Brooklyn Brewery:40.72153, -73.95747
+Union Square:40.73575, -73.99048
+Citi Field:40.75587, -73.84613
+Yankee Stadium:40.82933, -73.92727
+Empire State Building:40.748496, -73.985587
+Atlantic Terminal:40.6850, -73.9777
+Brooklyn Navy Yard:40.7032, -73.9702
+Brooklyn Fairway:40.67416, -74.01704
+Governors Island:40.6894, -74.0182
+Washington Square Park:40.73087, -73.99766
+Grand Central Terminal:40.75298, -73.97711
+Statue of Liberty:40.68922, -74.04449
+Chinatown Fair Arcade (RIP):40.71407, -73.99858
+Mercury Lounge:40.7221, -73.9867
+Webster Hall:40.73169, -73.98927
+Whiskey Town:40.72576, -73.99030
+Ulysses Folk House:40.70433, -74.01034
+Metropolitan Museum of Art:40.77944, -73.96359
+Film Forum:40.7283, -74.0043
+Battery Park:40.70836, -74.01678
